@@ -1,7 +1,7 @@
 import { client } from "@repo/db/client"
 
 export default async function Home() {
-  const user = await client.user.findFirst();
+  const user = await client.users.findFirst();
   return (
   <div>
       First name haha: 
@@ -11,4 +11,6 @@ export default async function Home() {
     </div>  
   );
 }
+
+
 
