@@ -1,0 +1,39 @@
+
+
+
+services:
+  ws-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.ws
+      args:
+        DATABASE_URL: ${DATABASE_URL}
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+    ports:
+      - "3001:8081"
+    restart: unless-stopped
+
+  http-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+      args:
+        DATABASE_URL: ${DATABASE_URL}
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+    ports:
+      - "3002:8080"
+    restart: unless-stopped
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+      args:
+        DATABASE_URL: ${DATABASE_URL}
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+    ports:
+      - "3000:3000"
+    restart: unless-stopped

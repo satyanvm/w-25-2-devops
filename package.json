@@ -1,15 +1,20 @@
 {
+
+
   "name": "week-25-2-devops",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
-  },
+    "format": "pretti, mo run check-types",
+    "db:generate": "cd packages/prisma && npx prisma generate && cd ../..",
+    "start:web": "cd apps/web && pnpm run start",
+    "start:http-server": "cd apps/http-server && pnpm exec tsx index.ts",
+    "start:ws-server": "cd apps/ws-server && pnpm exec tsx index.ts"
+  }, 
   "devDependencies": {
     "prettier": "^3.5.3",
+    "tsx": "^4.19.4",
     "turbo": "^2.5.3",
     "typescript": "5.8.2"
   },
@@ -20,4 +25,9 @@
   "dependencies": {
     "prisma": "^6.8.2"
   }
+  ,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
 }

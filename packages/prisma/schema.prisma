@@ -4,26 +4,26 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
+
+
+
+
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+  output   = "./generated/prisma"
 }
+
 
 datasource db {
   provider = "postgresql"
-  url      =  env("DATABASE_URL")
+  url      =  "postgresql://postgres:satyaverma108@db.yfmmzluaytlejootcadu.supabase.co:5432/postgres"
 }
 
 
-model User{
+model users{
   id                  String           @id           @default(uuid())
   username            String           @unique 
   password            String
 }
 
-model Kernel{
-  id                  String           @id           @default(uuid())
-  username            String              @unique
-  password            String
-  name                String
-}
