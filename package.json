@@ -1,6 +1,4 @@
 {
-
-
   "name": "week-25-2-devops",
   "private": true,
   "scripts": {
@@ -11,7 +9,7 @@
     "start:web": "cd apps/web && pnpm run start",
     "start:http-server": "cd apps/http-server && pnpm exec tsx index.ts",
     "start:ws-server": "cd apps/ws-server && pnpm exec tsx index.ts"
-  }, 
+  },
   "devDependencies": {
     "prettier": "^3.5.3",
     "tsx": "^4.19.4",
@@ -23,9 +21,9 @@
     "node": ">=18"
   },
   "dependencies": {
+    "@types/node": "^22.15.3",
     "prisma": "^6.8.2"
-  }
-  ,
+  },
   "workspaces": [
     "apps/*",
     "packages/*"

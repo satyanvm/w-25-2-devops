@@ -20,6 +20,8 @@ COPY packages ./packages
 # Install dependencies
 RUN corepack enable && pnpm install
 
+RUN pnpm turbo run build --filter=@repo/db
+
 # Generate Prisma client (must be defined in scripts)
 RUN echo "Cache bust: $CACHE_BUST" && pnpm run db:generate 
 

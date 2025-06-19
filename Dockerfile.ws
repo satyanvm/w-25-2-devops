@@ -7,7 +7,6 @@ WORKDIR /usr/src/app
 
 ARG CACHE_BUST
 
-
 RUN echo "$CACHE_BUST" > /tmp/cache_bust_marker
 
 # Copy workspace packages and configuration
@@ -24,7 +23,7 @@ COPY packages ./packages
 COPY ./apps/ws-server ./apps/ws-server
 
 # Install dependencies
-RUN corepack enable && pnpm install
+RUN corepack enable && pnpm install 
 
 # Run Prisma generate (requires script in root package.json)
 RUN echo "Cache bust: $CACHE_BUST" && pnpm run db:generate 

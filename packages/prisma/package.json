@@ -5,10 +5,14 @@
   "main": "index.js",
   "exports": {
     "./client": "./index.ts"
-  },
+  }, 
+  "type": "module", 
   "keywords": [],
   "devDependencies": {
     "@repo/typescript-config": "workspace:*"
+  },
+    "scripts": {
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",

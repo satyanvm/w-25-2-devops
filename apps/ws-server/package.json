@@ -1,22 +1,14 @@
 {
-
-
-
-
-
-  
   "name": "ws-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js", 
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc -b",
+    "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "npm run build && npm run start"
-  }
-  ,
+    "dev": "tsx index.ts"
+  },
   "devDependencies": {
     "@repo/db": "workspace:*",
     "@repo/typescript-config": "workspace:*"
@@ -25,7 +17,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "6.8.2",
     "@types/ws": "^8.18.1",
+    "prisma": "^6.8.2",
     "ws": "^8.18.2"
   }
-}  
+}

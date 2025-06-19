@@ -5,25 +5,20 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 
-
-
-
 generator client {
   provider = "prisma-client-js"
   binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
   output   = "./generated/prisma"
-}
-
+} 
 
 datasource db {
-  provider = "postgresql"
-  url      =  "postgresql://postgres:satyaverma108@db.yfmmzluaytlejootcadu.supabase.co:5432/postgres"
+  provider = "postgresql"  
+  url      =  "postgresql://neondb_owner:npg_m5EoDjWI2vcL@ep-shy-hat-a8mlaz0b-pooler.eastus2.azure.neon.tech/neondb?sslmode=require"
 }
-
-
+  
 model users{
   id                  String           @id           @default(uuid())
   username            String           @unique 
-  password            String
+  password            String 
 }
 
